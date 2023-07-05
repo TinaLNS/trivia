@@ -6,16 +6,18 @@ class AnswerButton extends React.Component {
     super(props);
   }
 
+  handleButtonClick = () => {
+    this.props.handleGuess(this.props.answer);
+  };
+
   render() {
     return (
-      <button
-        onClick={this.props.handleGuess}
-        className='btn btn-outline-primary'
-      >
+      <button onClick={this.handleButtonClick} className='btn btn-outline-primary'>
         {decodeHTML(this.props.answer)}
       </button>
     );
   }
 }
+
 
 export { AnswerButton };
